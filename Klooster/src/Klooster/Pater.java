@@ -62,7 +62,7 @@ public class Pater {
         Gedachte gedachte = new Gedachte(teHorenWoord, persoonlijkheid);
         liGedachten.add(gedachte);
         if (20 < liGedachten.size()){
-            throw new IllegalArgumentException("full");
+            throw new IllegalArgumentException("Hoofd van Pater Roger zit vol en nadenken brengt geen soelaas.");
         }
     }
     
@@ -96,9 +96,25 @@ public class Pater {
                     
                     nieuweGedachten.add(kleinsteGedachte);
                 break;
+                //Manier 2 - Vergelijk creativiteit
                 case 1:
+                    int kleinsteAfstandCreativiteit = 0;
+                    Gedachte kleinsteGedachteCreativiteit = null;
+                    
+                    for (Gedachte werkGedachte : werkLijst){
+                        int afstandCreativiteit = Math.abs(werkGedachte.getMening().getCreativiteit() - persoonlijkheid.getCreativiteit());
+                        
+                        if (afstandCreativiteit < kleinsteAfstandCreativiteit || kleinsteGedachteCreativiteit == null){
+                            kleinsteAfstandCreativiteit = afstandCreativiteit;
+                            kleinsteGedachteCreativiteit = werkGedachte;
+                        }
+                        
+                    }
+                    
+                    nieuweGedachten.add(kleinsteGedachteCreativiteit);
                     
                 break;
+                //Manier 3 - vergelijk gemiddelde
                 case 2:
                     
                 break;
