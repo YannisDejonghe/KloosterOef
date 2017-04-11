@@ -116,6 +116,8 @@ public class Pater {
                 break;
                 //Manier 3 - vergelijk gemiddelde
                 case 2:
+                
+                    
                     
                 break;
             }
